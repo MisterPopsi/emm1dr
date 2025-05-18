@@ -1,18 +1,22 @@
-const form = document.getElementById("questionForm");
-const questionList = document.getElementById("questionList");
+const questions = [
+  { text: "Сколько будет 2 + 2?", points: 1 },
+  { text: "Столица Франции?", points: 2 },
+  { text: "Какой год был основан GitHub?", points: 3 },
+];
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  
-  const questionText = document.getElementById("questionInput").value.trim();
-  const points = parseInt(document.getElementById("pointsInput").value);
+let score = 0;
 
-  if (!questionText || isNaN(points)) return;
+const listEl = document.getElementById("question-list");
+const scoreEl = document.getElementById("score");
 
+questions.forEach((q, index) => {
   const li = document.createElement("li");
-  li.textContent = `${questionText} — ${points} баллов`;
-
-  questionList.appendChild(li);
-
-  form.reset();
+  li.textContent = `${q.text} (+${q.points} балл)`;
+  li.onclick = () => {
+    score += q.points;
+    scoreEl.textContent = `Баллы: ${score}`;
+    li.style.textDecoration = "line-through";
+    li.style.pointerEvents = "none"; // чтобы нельзя было нажимать снова
+  };
+  listEl.appendChild(li);
 });
