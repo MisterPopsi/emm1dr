@@ -2,21 +2,15 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Вопросы и Баллы</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вопросы и баллы</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Вопросы и Баллы</h1>
-    <form id="questionForm">
-      <input type="text" id="questionInput" placeholder="Введите вопрос" required />
-      <input type="number" id="pointsInput" placeholder="Баллы" required min="0" />
-      <button type="submit">Добавить</button>
-    </form>
+  <h1>Вопросы</h1>
+  <div id="score">Баллы: 0</div>
+  <ul id="question-list"></ul>
 
-    <ul id="questionList"></ul>
-  </div>
   <script src="script.js"></script>
 </body>
 </html>
