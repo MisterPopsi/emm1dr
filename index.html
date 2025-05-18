@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вопросы и Баллы</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Вопросы и Баллы</h1>
+    <form id="questionForm">
+      <input type="text" id="questionInput" placeholder="Введите вопрос" required />
+      <input type="number" id="pointsInput" placeholder="Баллы" required min="0" />
+      <button type="submit">Добавить</button>
+    </form>
+
+    <ul id="questionList"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
